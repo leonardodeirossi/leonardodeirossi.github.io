@@ -1,0 +1,54 @@
+ul.contact-list>li.my-name {
+    font-weight: bold;
+    color: #424242;
+}
+
+p.personal-name-bold,
+span.personal-name-bold {
+    font-weight: bold;
+    color: #424242;
+}
+
+figure.citation {
+    border-left: 4px solid #E8E8E8;
+}
+
+figure.citation>p.citation-text {
+    color: #828282;
+    padding-left: 14px;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+figure.citation>p.citation-author {
+    padding-top: 0;
+    margin-top: 0;
+    color: #424242;
+    padding-left: 14px;
+    font-size: 14px;
+}
+
+div.course-container {
+    width: 100%;
+    border: 2px solid #828282;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+div.course-container>a.course-title {
+    /*font-size: 18px;*/
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+div.trigger>a.page-link:last-child {
+    display: none;
+}
