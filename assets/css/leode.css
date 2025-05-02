@@ -1,3 +1,8 @@
+@font-face {
+    font-family: morn-demibold;
+    src: url("/assets/fonts/morn-demibold.ttf");
+}
+
 ul.contact-list>li.my-name {
     font-weight: bold;
     color: #424242;
@@ -31,7 +36,7 @@ figure.citation>p.citation-author {
 }
 
 div.course-container {
-    width: 100%;
+    /* width: 100%; */
     border: 2px solid #828282;
     padding: 8px;
     margin-bottom: 16px;
@@ -51,4 +56,41 @@ div.course-container>a.course-title {
 
 div.trigger>a.page-link:last-child {
     display: none;
+}
+
+/* #1e4e79 */
+.site-header {
+    /* border-top: 5px solid #424242; */
+    border-top: 5px solid #1e4e79;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #1e4e79;
+    min-height: 56px;
+    position: relative;
+}
+
+.site-title {
+    font-size: 26px;
+    font-family: morn-demibold;
+    color: white;
+    text-decoration: none;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+}
+
+.site-title,
+.site-title:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.site-title,
+.site-title:hover {
+    text-decoration: none;
+}
+
+.site-nav .page-link {
+    color: white;
+    line-height: 1.5;
 }
