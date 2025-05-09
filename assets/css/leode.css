@@ -1,6 +1,6 @@
 @font-face {
     font-family: morn-demibold;
-    src: url("/assets/fonts/morn-demibold.ttf");
+    src: url("../fonts/morn-demibold.ttf");
 }
 
 ul.contact-list>li.my-name {
@@ -36,14 +36,9 @@ figure.citation>p.citation-author {
 }
 
 div.course-container {
-    /* width: 100%; */
     border: 2px solid #828282;
     padding: 8px;
     margin-bottom: 16px;
-}
-
-div.course-container>a.course-title {
-    /*font-size: 18px;*/
 }
 
 .margin-bottom-0 {
@@ -58,9 +53,7 @@ div.trigger>a.page-link:last-child {
     display: none;
 }
 
-/* #1e4e79 */
 .site-header {
-    /* border-top: 5px solid #424242; */
     border-top: 5px solid #1e4e79;
     border-bottom: 1px solid #e8e8e8;
     background-color: #1e4e79;
