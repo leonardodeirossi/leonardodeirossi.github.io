@@ -87,3 +87,11 @@ div.trigger>a.page-link:last-child {
     color: white;
     line-height: 1.5;
 }
+
+@media screen and (max-width: 600px) {
+    .site-nav .page-link {
+        display: block;
+        padding: 5px 10px;
+        color: black !important;
+    }
+}
