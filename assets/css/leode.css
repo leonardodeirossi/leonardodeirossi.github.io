@@ -95,3 +95,16 @@ div.trigger>a.page-link:last-child {
         color: black !important;
     }
 }
+
+div.row {
+    display: flex;
+    align-items: center;
+}
+
+div.col {
+    padding: 2px;
+}
+
+div.col-4 {
+    width: 33%;
+}
