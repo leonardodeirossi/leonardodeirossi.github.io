@@ -62,6 +62,8 @@ div.trigger>a.page-link:last-child {
 }
 
 .site-title {
+    display: flex;
+    align-items: center;
     font-size: 26px;
     font-family: morn-demibold;
     color: white;
@@ -107,4 +109,83 @@ div.col {
 
 div.col-4 {
     width: 33%;
+}
+
+.leode-info-col-wrapper {
+    display: flex;
+    font-size: 15px;
+}
+
+.leode-info-col {
+    margin: 5px;
+    padding: 5px;
+}
+
+.leode-info-col-1 {
+    width: -webkit-calc(35% - (30px / 2));
+    width: calc(35% - (30px / 2));
+}
+
+.leode-info-col-2 {
+    width: -webkit-calc(65% - (30px / 2));
+    width: calc(65% - (30px / 2));
+}
+
+@media screen and (max-width: 800px) {
+    .leode-info-col-1 {
+        width: -webkit-calc(65% - (30px / 2));
+        width: calc(40% - (30px / 2));
+    }
+
+    .leode-info-col-2 {
+        width: -webkit-calc(65% - (30px / 2));
+        width: calc(60% - (30px / 2));
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .leode-info-col-wrapper {
+        display: unset;
+    }
+
+    .leode-info-col-1 {
+        width: 100%;
+    }
+
+    .leode-info-col-2 {
+        width: 100%;
+    }
+}
+
+.leode-info-img {
+    border-radius: 50%;
+}
+
+.leode-info-title {
+    font-size: 26px;
+}
+
+.leode-info-title>span {
+    color: #1e4e79;
+}
+
+.morn-demibold {
+    font-family: morn-demibold;
+}
+
+@media screen and (max-width: 800px) {
+    .leode-info-img {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .leode-info-img {
+        width: 45%;
+    }
+}
+
+.leode-info-subtitle {
+    font-size: 16px;
+    font-weight: bold;
 }
