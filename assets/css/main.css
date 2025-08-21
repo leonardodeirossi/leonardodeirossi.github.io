@@ -109,6 +109,8 @@ h6 {
 }
 
 /** Links */
+
+/*
 a {
     color: #2a7ae2;
     text-decoration: none;
@@ -120,6 +122,15 @@ a:visited {
 
 a:hover {
     color: #111;
+    text-decoration: underline;
+}
+*/
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
     text-decoration: underline;
 }
 
@@ -163,8 +174,8 @@ pre>code {
 
 /** Wrapper */
 .wrapper {
-    max-width: -webkit-calc(800px - (30px * 2));
-    max-width: calc(800px - (30px * 2));
+    max-width: -webkit-calc(1040px - (30px * 2));
+    max-width: calc(1040px - (30px * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: 30px;
@@ -218,7 +229,7 @@ pre>code {
 
 .site-title,
 .site-title:visited {
-    color: #424242;
+    /* color: #424242; */
 }
 
 .site-nav {
