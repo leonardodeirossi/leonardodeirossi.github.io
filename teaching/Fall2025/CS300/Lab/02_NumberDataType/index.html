@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Number data type | JavaScript cookbook</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <h1>JavaScript cookbook - Number data type</h1>
+    <h2>Version: 2025/09a (2025-09-14 12:08:00)</h2>
+
+    <hr>
+
+    <p>
+        In JavaScript, all numeric values &ndash; whether integers or decimals &ndash; belong to the same data type:
+        <code>number</code>. There is no separate type for integers. This makes arithmetic simple and
+        consistent across your code.
+    </p>
+
+    <h2>Examples of Numbers</h2>
+
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <td>Value</td>
+                <td>Description</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><code>42</code></td>
+                <td>Integer number</td>
+            </tr>
+
+            <tr>
+                <td><code>3.14</code></td>
+                <td>Floating-point (decimal) number</td>
+            </tr>
+
+            <tr>
+                <td><code>-7</code></td>
+                <td>Negative number</td>
+            </tr>
+
+            <tr>
+                <td><code>Infinity</code></td>
+                <td>Special value representing infinity</td>
+            </tr>
+
+            <tr style="display: none;">
+                <td><code>NaN</code></td>
+                <td>“Not-a-Number” &ndash; result of invalid math operations</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Using Numbers</h2>
+
+    <p>
+        You can do arithmetic with numbers directly:
+    </p>
+
+    <pre><code>let a = 10;<br>let b = 3;<br>let sum = a + b;       // 13<br>let quotient = a / b;  // 3.333...</code></pre>
+
+    <h2>And when the value we assign is not a number?</h2>
+
+    <p>
+        When we work with input from the user, sometimes the value we get is not in the correct type.
+        To mitigate the issue, JavaScript provides some functions to convert a generic variable to a number.
+    </p>
+
+    <p>
+        But if the given functions are not able to convert the number?
+    </p>
+
+    <h3>Try yourself:</h3>
+
+    <p>
+        Insert a number to convert:
+        <input type="text" id="number">
+
+        <select id="cast_type">
+            <option value="int">parseInt()</option>
+            <option value="float">parseFloat()</option>
+        </select>
+
+        <button type="button" onclick="tryYourself()">>></button>
+
+        <input type="text" id="number_result" disabled>
+    </p>
+
+    <p>
+        <a href="../index.html">(go back)</a>
+    </p>
+
+    <script>
+        function tryYourself() {
+            let number = document.getElementById("number").value;
+            let cast_type = document.getElementById("cast_type").value;
+
+            if (number == "") {
+                alert("No value inserted.");
+                return;
+            }
+
+            switch (cast_type) {
+                case "int":
+                    document.getElementById("number_result").value = parseInt(number);
+                    break;
+
+                case "float":
+                    document.getElementById("number_result").value = parseFloat(number);
+                    break;
+
+                default:
+                    document.getElementById("number_result").value = NaN;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
