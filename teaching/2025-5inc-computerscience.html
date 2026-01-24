@@ -855,7 +855,7 @@
                                             <li>Eliminazione (<code>unset($_SESSION["..."])</code>).</li>
                                         </ul>
                                     </li>
-                                    
+
                                     <li>
                                         Eliminazione di una sessione:
 
@@ -916,6 +916,100 @@
                                             <td>
                                                 <center>
                                                     <a href="assets/2025-5inc-computerscience/DoExercises/Ex12.pdf"
+                                                        target="_blank">(link)</a>
+                                                </center>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+
+                            <br>
+
+                            <section>
+                                <h2 id="lez-10">Lezione 10 - Upload di file</h2>
+
+                                <span class="font-weight-bold">Argomenti:</span>
+
+                                <ul>
+                                    <li>Definizione di <i>storage</i>;</li>
+                                    <li>Schema dello storage nel filesystem;</li>
+                                    <li>
+                                        Codici di stato HTTP:
+
+                                        <ul>
+                                            <li>400 - Bad Request;</li>
+                                            <li>413 - Content Too Large;</li>
+                                            <li>415 - Unsupported Media Type.</li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        Preparazione all'upload di un file (form HTML):
+
+                                        <ul>
+                                            <li>Tipo di richiesta <code>POST</code>;</li>
+                                            <li>Attributo <code>enctype="multipart/form-data"</code>.</li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        Preparazione all'upload di un file (PHP):
+
+                                        <ul>
+                                            <li>Funzione <code>basename([...])</code>;</li>
+                                            <li>
+                                                Array associativo globale <code>$_FILES</code>:
+
+                                                <ul>
+                                                    <li>Variabile <code>tmp_name</code>.</li>
+                                                </ul>
+                                            </li>
+                                            <li>Funzione <code>file_exists([...])</code>;</li>
+                                            <li>Funzione <code>move_uploaded_file([...])</code>.</li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        Media types (MIME types):
+
+                                        <ul>
+                                            <li>Definizione;</li>
+                                            <li>MIME Type vs. estensione;</li>
+                                            <li>Variabile <code>type</code>.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <table style="width: 100%;">
+                                    <thead>
+                                        <th colspan="2">
+                                            Materiali
+                                        </th>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Slides della lezione
+                                            </td>
+
+                                            <td>
+                                                <center>
+                                                    <a href="assets/2025-5inc-computerscience/Spring2026_CS300_11_FileUpload.pdf"
+                                                        target="_blank">(link)</a>
+                                                </center>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                Esercizio 13 - Il gestionale dell'Accademia (2)
+                                            </td>
+
+                                            <td>
+                                                <center>
+                                                    <a href="assets/2025-5inc-computerscience/DoExercises/Ex13.pdf"
                                                         target="_blank">(link)</a>
                                                 </center>
                                             </td>
@@ -984,6 +1078,10 @@
 
                             <li>
                                 <a href="#lez-09" title="Lezione 9 - Gestione delle sessioni">Lezione 9</a>
+                            </li>
+
+                            <li>
+                                <a href="#lez-10" title="Lezione 10 - Upload di file">Lezione 10</a>
                             </li>
                         </ul>
 
