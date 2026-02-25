@@ -1089,6 +1089,82 @@
                                     </tbody>
                                 </table>
                             </section>
+
+                            <br>
+
+                            <section>
+                                <h2 id="lez-12">Lezione 12 - Prepared statements</h2>
+
+                                <span class="font-weight-bold">Argomenti:</span>
+
+                                <ul>
+                                    <li>
+                                        I <i>prepared statements</i>:
+                                    
+                                        <ul>
+                                            <li>Definizione;</li>
+                                            <li>Perch&egrave; si usano.</li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        Operazioni nel database:
+
+                                        <ul>
+                                            <li>Operazioni di lettura;</li>
+                                            <li>Operazioni di scrittura;</li>
+                                            <li>Buone pratiche.</li>
+                                        </ul>
+                                    </li>
+
+                                    <li>Tipi per <code>bind_param()</code>;</li>
+                                    
+                                    <li>
+                                        Esercizi:
+
+                                        <ul>
+                                            <li>Esercizio #1;</li>
+                                            <li>Esercizio #2.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <table style="width: 100%;">
+                                    <thead>
+                                        <th colspan="2">
+                                            Materiali
+                                        </th>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Slides della lezione
+                                            </td>
+
+                                            <td>
+                                                <center>
+                                                    <a href="assets/2025-5inc-computerscience/Spring2026_CS300_13_PreparedStatements.pdf"
+                                                        target="_blank">(link)</a>
+                                                </center>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                Esercizi (lezione del 26/02)
+                                            </td>
+
+                                            <td>
+                                                <center>
+                                                    <a href="assets/2025-5inc-computerscience/Spring2026_CS300_14_ExercisesPHPAndSQL.pdf"
+                                                        target="_blank">(link)</a>
+                                                </center>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
                         </div>
                     </div>
 
@@ -1115,51 +1191,95 @@
 
                         <p class="font-weight-bold">Indice delle lezioni:</p>
 
-                        <ul>
-                            <li>
-                                <a href="#lez-01" title="Lezione 1 - Introduzione a JavaScript">Lezione 1</a>
-                            </li>
+                        <table style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>Primo quadrimestre</th>
+                                </tr>
+                            </thead>
 
-                            <li>
-                                <a href="#lez-02" title="Lezione 2 - Array e Oggetti">Lezione 2</a>
-                            </li>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="#lez-01" title="Lezione 1 - Introduzione a JavaScript">Lezione 1 (18/09/2025)</a>
+                                    </td>
+                                </tr>
 
-                            <li>
-                                <a href="#lez-03" title="Lezione 3 - Gestione delle date">Lezione 3</a>
-                            </li>
+                                <tr>
+                                    <td>
+                                        <a href="#lez-02" title="Lezione 2 - Array e Oggetti">Lezione 2 (25/09/2025, 02/10/2025)</a>
+                                    </td>
+                                </tr>
 
-                            <li>
-                                <a href="#lez-04" title="Lezione 4 - JavaScript Object Notation (JSON)">Lezione 4</a>
-                            </li>
+                                <tr>
+                                    <td>
+                                        <a href="#lez-03" title="Lezione 3 - Gestione delle date">Lezione 3 (09/10/2025)</a>
+                                    </td>
+                                </tr>
 
-                            <li>
-                                <a href="#lez-05" title="Lezione 5 - Introduzione a PHP">Lezione 5</a>
-                            </li>
+                                <tr>
+                                    <td>
+                                        <a href="#lez-04" title="Lezione 4 - JavaScript Object Notation (JSON)">Lezione 4 (23/10/2025)</a>
+                                    </td>
+                                </tr>
 
-                            <li>
-                                <a href="#lez-06" title="Lezione 6 - Le funzioni in PHP">Lezione 6</a>
-                            </li>
+                                <tr>
+                                    <td>
+                                        <a href="#lez-05" title="Lezione 5 - Introduzione a PHP">Lezione 5 (06/11/2025)</a>
+                                    </td>
+                                </tr>
 
-                            <li>
-                                <a href="#lez-07" title="Lezione 7 - Gestione dell'input in PHP">Lezione 7</a>
-                            </li>
+                                <tr>
+                                    <td>
+                                        <a href="#lez-06" title="Lezione 6 - Le funzioni in PHP">Lezione 6 (13/11/2025)</a>
+                                    </td>
+                                </tr>
 
-                            <li>
-                                <a href="#lez-08" title="Lezione 8 - Filtri e sicurezza">Lezione 8</a>
-                            </li>
+                                <tr>
+                                    <td>
+                                        <a href="#lez-07" title="Lezione 7 - Gestione dell'input in PHP">Lezione 7 (20/11/2025)</a>
+                                    </td>
+                                </tr>
 
-                            <li>
-                                <a href="#lez-09" title="Lezione 9 - Gestione delle sessioni">Lezione 9</a>
-                            </li>
+                                <tr>
+                                    <td>
+                                        <a href="#lez-08" title="Lezione 8 - Filtri e sicurezza">Lezione 8 (27/11/2025)</a>
+                                    </td>
+                                </tr>
+                            </tbody>
 
-                            <li>
-                                <a href="#lez-10" title="Lezione 10 - Upload di file">Lezione 10</a>
-                            </li>
+                            <thead>
+                                <tr>
+                                    <th>Secondo quadrimestre</th>
+                                </tr>
+                            </thead>
 
-                            <li>
-                                <a href="#lez-11" title="Lezione 11 - Introduzione a SQL">Lezione 11</a>
-                            </li>
-                        </ul>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="#lez-09" title="Lezione 9 - Gestione delle sessioni">Lezione 9 (08/01/2026)</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <a href="#lez-10" title="Lezione 10 - Upload di file">Lezione 10 (22/01/2026)</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <a href="#lez-11" title="Lezione 11 - Introduzione a SQL">Lezione 11 (29/01/2026)</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <a href="#lez-12" title="Lezione 12 - Prepared statements">Lezione 12 (19/02/2026, 26/02/2026)</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
                         <br>
 
