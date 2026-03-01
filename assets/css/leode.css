@@ -49,9 +49,11 @@ div.course-container {
     font-weight: bold;
 }
 
+/*
 div.trigger>a.page-link:last-child {
     display: none;
 }
+*/
 
 .site-header {
     border-top: 5px solid #1e4e79;
