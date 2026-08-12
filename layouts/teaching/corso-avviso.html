@@ -1,0 +1,56 @@
+{{ define "main" }}
+
+<div class="card">
+    <h5 class="card-header page-card-header">
+        {{ .Title }}
+    </h5>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-8">
+                <i class="h5 bi bi-megaphone text-warning"></i>
+                <a href="{{ .RelPermalink }}" class="h5 text-primary text-decoration-none">{{ .Title }}</a>
+
+                <p class="text-muted h6 mb-0 pb-0">
+                    Pubblicato il: <b>{{ .Date.Format "02/01/2006 alle 15:04" }}</b>
+                    {{ with .Params.tags }}
+                    {{ range . }}
+                    {{ $tagLow := lower . }}
+                    {{ $bgClass := "text-bg-secondary" }}
+
+                    {{ if eq $tagLow "urgente" }}
+                    {{ $bgClass = "text-bg-danger" }}
+                    {{ else if eq $tagLow "informazione" }}
+                    {{ $bgClass = "text-bg-secondary" }}
+                    {{ else if eq $tagLow "materiale" }}
+                    {{ $bgClass = "text-bg-info" }}
+                    {{ else if eq $tagLow "importante" }}
+                    {{ $bgClass = "text-bg-primary" }}
+                    {{ else if eq $tagLow "calendario" }}
+                    {{ $bgClass = "text-bg-primary" }}
+                    {{ else if eq $tagLow "verifiche" }}
+                    {{ $bgClass = "text-bg-danger" }}
+                    {{ else if eq $tagLow "risolto" }}
+                    {{ $bgClass = "text-bg-success" }}
+                    {{ end }}
+
+                    <span class="badge {{ $bgClass }} me-1">{{ . }}</span>
+                    {{ end }}
+                    {{ end }}
+                </p>
+
+                <hr>
+
+                <p>
+                    {{ .Content }}
+                </p>
+            </div>
+
+            <div class="col col-4">
+                {{ partial "corso-sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ end }}

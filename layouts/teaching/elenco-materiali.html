@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+<div class="card">
+    <h5 class="card-header page-card-header">
+        {{ .Title }}
+    </h5>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-8">
+                {{ .Content }}
+
+                <div class="row row-cols-1 row-cols-md-2 g-3 pb-3">
+                    {{ if .Params.materiali }}
+                    {{ range .Params.materiali }}
+                    <div class="col">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="{{ .link }}" class="h5 card-title text-primary text-decoration-none">
+                                    {{ .titolo }}
+                                </a>
+
+                                <p class="card-text">{{ .descrizione }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+
+            <div class="col col-4">
+                {{ partial "corso-sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ end }}

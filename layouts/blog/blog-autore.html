@@ -1,0 +1,85 @@
+{{ define "main" }}
+
+{{ partial "blog-header.html" . }}
+
+<div class="row">
+    <div class="col col-8">
+        <h2>
+            Pagina dell'autore
+        </h2>
+
+        <div class="card mb-3">
+            <div class="row g-0 align-items-center">
+                <div class="col-md-3">
+                    <img src="/images/blog/authors/{{ .Params.immagine }}" class="p-2"
+                        style="width: 100%; border-radius: 50%;" alt="...">
+                </div>
+
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <h3 class="card-title morn-demibold">
+                            {{ .Params.nome }}
+                        </h3>
+
+                        <p class="card-text">
+                            {{ .Params.descrizione | markdownify }}
+                        </p>
+
+                        <p class="card-text">
+                            <small class="text-body-secondary">
+                                Ultima modifica il {{ .Lastmod.Format "02/01/2006 alle 15:04" }}
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ .Content }}
+
+        {{ $authorID := .Params.id | default (path.Base .File.Dir) }}
+        {{ $blogPages := where .Site.RegularPages "Type" "blog" }}
+        {{ $authorArticles := where $blogPages "Params.authors" "intersect" (slice $authorID) }}
+
+        <br>
+
+        <h4>
+            Articoli di {{ .Params.nome }}
+        </h4>
+
+        <br>
+
+        <ul class="list-unstyled">
+            {{ range $authorArticles }}
+            <li>
+                <a class="text-decoration-none" href="{{ .RelPermalink }}">
+                    <div class="col-12">
+                        <h5 class="mb-0 text-dark">
+                            {{ .Title }}
+                        </h5>
+
+                        <small class="text-body-secondary">
+                            <i class="bi bi-calendar-date"></i>
+                            {{ .Date.Format "02/01/2006" }}
+
+                            {{ with .Params.authors }}
+                            <i class="bi bi-person-circle"></i>
+                            {{ range $index, $author := . }}
+                            {{ if $index }}, {{ end }}
+                            <a href="/blog/authors/{{ $author | urlize }}/">{{ $author }}</a>
+                            {{ end }}
+                            {{ end }}
+                        </small>
+                    </div>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    <div class="col col-4">
+        {{ partial "blog-sidebar.html" . }}
+    </div>
+</div>
+
+{{ end }}

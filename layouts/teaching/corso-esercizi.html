@@ -1,0 +1,56 @@
+{{ define "main" }}
+
+<div class="card">
+    <h5 class="card-header page-card-header">
+        {{ .Title }}
+    </h5>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-8">
+                {{ .Content }}
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Descrizione</th>
+                            <th style="width: 15%;">
+                                <center>Testo</center>
+                            </th>
+
+                            <th style="width: 15%;">
+                                <center>Soluzione</center>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {{ range .Params.esercizi }}
+                        <tr>
+                            <td>{{ .titolo }}</td>
+                            <td>
+                                <center>
+                                    <a href="/teaching/{{ $.Params.codice }}/assets/esercizi/{{ .link }}" target="_blank">(link)</a>
+                                </center>
+                            </td>
+
+                            <td>
+                                {{ if .soluzione }}
+                                <center>
+                                    <a href="/teaching/{{ $.Params.codice }}/assets/esercizi/soluzioni/{{ .link }}" target="_blank">(link)</a>
+                                </center>
+                                {{ end }}
+                            </td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col col-4">
+                {{ partial "corso-sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

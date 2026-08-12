@@ -1,0 +1,133 @@
+{{ define "main" }}
+
+<div class="card">
+    <h5 class="card-header page-card-header">
+        {{ .Title }}
+    </h5>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-8">
+                <p>
+                    In questa pagina vengono elencate le lezioni mano a mano che si svolgono nel corso dell'anno
+                    scolastico.
+                    I materiali sono gli stessi che vengono <i>linkati</i> su Classroom.
+                </p>
+
+                <table class="table table-bordered align-middle">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">
+                                <center>N.</center>
+                            </th>
+                            <th style="width: 20%;">
+                                <center>Data</center>
+                            </th>
+                            <th colspan="2" style="width: 70%;">Titolo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{ range .RegularPages.ByParam "id" }}
+                        {{ if .Params.bozza }}
+                        <tr>
+                            <td class="text-muted">
+                                <center>{{ .Params.numero }}</center>
+                            </td>
+
+                            <td class="text-muted">
+                                <center>{{ .Params.data }}</center>
+                            </td>
+
+                            <td class="text-muted">
+                                {{ .Params.descrizione }}
+                            </td>
+
+                            <td class="text-muted" style="width: 10%;">
+                                <center>
+                                    (bozza)
+                                </center>
+                            </td>
+                        </tr>
+                        {{ else if .Params.cancellata }}
+                        <tr>
+                            <td class="text-muted text-decoration-line-through">
+                                <center>{{ .Params.numero }}</center>
+                            </td>
+
+                            <td class="text-muted text-decoration-line-through">
+                                <center>{{ .Params.data }}</center>
+                            </td>
+
+                            <td class="text-muted text-decoration-line-through">
+                                {{ .Params.descrizione }}
+                            </td>
+
+                            <td class="text-danger" style="width: 10%;">
+                                <center>
+                                    {{ if .Params.link_avviso_cancellata }}
+                                    <a href="../avvisi/{{ .Params.link_avviso_cancellata }}" class="text-danger" title="Clicca per leggere l'avviso">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                    </a>
+                                    {{ else }}
+                                    <i class="bi bi-exclamation-circle"></i>
+                                    {{ end }}
+                                </center>
+                            </td>
+                            {{ else }}
+                        <tr>
+                            <td>
+                                <center>{{ .Params.numero }}</center>
+                            </td>
+
+                            <td>
+                                <center>{{ .Params.data }}</center>
+                            </td>
+
+                            <td>
+                                {{ .Params.descrizione }}
+                            </td>
+
+                            <td style="width: 10%;">
+                                <center>
+                                    <a href="{{ .RelPermalink }}">
+                                        (link)
+                                    </a>
+                                </center>
+                            </td>
+                        </tr>
+                        {{ end }}
+                        {{ end }}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col col-4">
+                {{ if .Params.calendario }}
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Calendario delle lezioni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{ range .Params.calendario }}
+                        <tr>
+                            <td>
+                                {{ .giorno }}<br>
+                                <span style="font-size: 14px">{{ .orario }} - {{ .aula }}</span>
+                            </td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+                {{ end }}
+
+                <hr>
+
+                {{ partial "corso-sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ end }}

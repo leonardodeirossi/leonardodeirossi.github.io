@@ -1,0 +1,11 @@
+{{ $corso := .CurrentSection }}
+{{ if eq $corso.Type "teaching" }}
+<aside>
+    <p class="fw-bold">Consigli per migliorare:</p>
+
+    <p>
+        Se avete tempo e volete condividere le vostre impressioni sul corso e suggerimenti per migliorarlo, compilate
+        questo form anonimo <a href="https://ldeirossi.altervista.org/QuestionarioDidattica/survey.php?sid=1" target="_blank">(link)</a>.
+    </p>
+</aside>
+{{ end }}

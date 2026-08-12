@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+{{ partial "blog-header.html" . }}
+
+{{ $parts := split .Title "-" }}
+{{ $year := index $parts 0 }}
+
+{{ $monthStr := strings.TrimPrefix "0" (index $parts 1) }}
+{{ $monthInt := int $monthStr }}
+
+{{ $mesi := slice "" "Gennaio" "Febbraio" "Marzo" "Aprile" "Maggio" "Giugno" "Luglio" "Agosto" "Settembre" "Ottobre"
+"Novembre" "Dicembre" }}
+{{ $nomeMese := index $mesi $monthInt }}
+
+<div class="row">
+    <div class="col col-8">
+        <h2 class="morn-demibold mb-1">
+            {{ $nomeMese }} {{ $year }}
+        </h2>
+
+        <p class="text-muted">Tutti gli articoli di {{ $nomeMese }} {{ $year }}.</p>
+
+        {{ range .Pages }}
+        <div class="card mb-3">
+            <div class="card-body">
+                <a href="{{ .RelPermalink }}" class="h4 card-title text-primary text-decoration-none morn-demibold">
+                    {{ .Title }}
+                </a>
+
+                <p class="card-text">
+                    <i class="bi bi-calendar-date"></i>
+                    {{ .Date.Format "02/01/2006" }}
+
+                    {{ with .Params.authors }}
+                    <i class="bi bi-person-circle"></i>
+                    {{ range $index, $author := . }}
+                    {{ if $index }}, {{ end }}
+                    <a href="/blog/authors/{{ $author | urlize }}/">{{ $author }}</a>
+                    {{ end }}
+                    {{ end }}
+                </p>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+    <div class="col col-4">
+        {{ partial "blog-sidebar.html" . }}
+    </div>
+</div>
+
+{{ end }}

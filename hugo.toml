@@ -1,0 +1,18 @@
+baseURL = 'https://leonardodeirossi.github.io/'
+locale = 'en-us'
+title = '~leode'
+
+[taxonomies]
+  tag = "tags"
+  author = "authors"
+  archive = "archives"
+
+[permalinks]
+  blog = "/blog/:year/:month/:slug/"
+  tags = "/blog/tags/:slug/"
+  authors = "/blog/authors/:slug/"
+  [permalinks.term]
+    archives = "/blog/archive/:slug/"
+
+[markup.goldmark.renderer]
+    unsafe = true

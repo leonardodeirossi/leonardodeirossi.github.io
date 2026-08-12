@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About Me on ~leode</title>
+    <link>http://localhost:1313/about/</link>
+    <description>Recent content in About Me on ~leode</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Su di me</title>
+      <link>http://localhost:1313/about/index-it/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/index-it/</guid>
+      <description>&lt;img src=&#34;http://localhost:1313/images/ThalesAleniaSpace4.png&#34; style=&#34;width: 100%;&#34;&gt;&#xA;&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sono il padre di una fantastica bambina di 11 anni&amp;hellip; scherzo, ma i miei amici mi chiamano &amp;ldquo;il papà&amp;rdquo; del gruppo&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;Sono docente di informatica presso l&amp;rsquo;Istituto Tecnico Tecnologico &amp;ldquo;Michelangelo Buonarroti&amp;rdquo; di Trento (TN) da settembre 2025.&lt;/p&gt;&#xA;&lt;p&gt;Inoltre, sono uno studente di laurea triennale in Informatica presso il Dipartimento di Ingegneria e Scienza dell&amp;rsquo;Informazione dell&amp;rsquo;Università di Trento dall&amp;rsquo;autunno del 2024.&lt;/p&gt;&#xA;&lt;p&gt;Ho il diploma di maturità scientifica in Informatica conseguito presso l&amp;rsquo;Istituto Tecnico &amp;ldquo;Michelangelo Buonarroti&amp;rdquo; di Trento nel luglio 2024 con la votazione di 91/100.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

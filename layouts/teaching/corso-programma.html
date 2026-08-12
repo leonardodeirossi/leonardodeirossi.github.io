@@ -1,0 +1,49 @@
+{{ define "main" }}
+
+<div class="card">
+    <h5 class="card-header page-card-header">
+        {{ .Title }}
+    </h5>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-8">
+                {{ .Content }}
+                {{ if .Params.programma }}
+                {{ range .Params.programma }}
+                <h5>{{ .titolo }}</h5>
+                {{ .argomenti | markdownify }}
+                {{ end }}
+                {{ end }}
+            </div>
+
+            <div class="col col-4">
+                {{ if .Params.calendario }}
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Calendario delle lezioni</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                    {{ range .Params.calendario }}
+                        <tr>
+                            <td>
+                            {{ .giorno }}<br>
+                            <span style="font-size: 14px">{{ .orario }}  - {{ .aula }}</span>
+                            </td>
+                        </tr>
+                    {{ end }}
+                    </tbody>
+                </table>
+                {{ end }}
+                
+                <hr>
+            
+                {{ partial "corso-sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{end }}

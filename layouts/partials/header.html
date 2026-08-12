@@ -1,0 +1,59 @@
+<div class="fixed-top" style="position: fixed;">
+    <nav class="navbar navbar-expand-lg" style="background-color: #1e4e79;">
+        <div class="container">
+            <a class="site-title" href="/">
+                <img src="/images/favicon.png" style="width: 40px; height: 40px;" alt="Logo">
+                <!-- &#127756; -->
+                <span>&nbsp;Leonardo Essam</span>
+            </a>
+
+            <div class="d-flex align-items-center">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {{ if .Params.course_root }}
+                    {{ $root := .Params.course_root }}
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ $root }}">Home del corso</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ $root }}programma/">Programma</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ $root }}registro/">Registro</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ $root }}materiale/">Materiale</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ $root }}temi-verifiche/">Temi (verifiche)</a>
+                    </li>
+                    {{ else }}
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/teaching/">Corsi e Insegnamenti</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/goodreads/">Biblioteca</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/blog/">@leode's Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/about/">About Me</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

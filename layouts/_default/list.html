@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+    </header>
+
+    <article class="post-content">
+        <!-- Questo inserisce il testo introduttivo (es. "Courses in school year...") -->
+        {{ .Content }}
+
+        <section>
+            <!-- Inizia il ciclo: per ogni file Markdown presente in questa cartella... -->
+            {{ range .Pages }}
+            <div class="course-container">
+                <h3 class="margin-bottom-0">
+                    <a href="{{ .RelPermalink }}" class="course-title">
+                        {{ .Title }}
+                    </a>
+                </h3>
+
+                <!-- Se nel Markdown abbiamo specificato la variabile "class", mostrala -->
+                {{ if .Params.classe }}
+                <h4 class="margin-bottom-0">
+                    Class/classes: <span style="font-weight: bold;">{{ .Params.classe }} @ {{ .Params.scuola }}</span>
+                </h4>
+                {{ end }}
+            </div>
+            {{ end }}
+        </section>
+    </article>
+</div>
+{{ end }}

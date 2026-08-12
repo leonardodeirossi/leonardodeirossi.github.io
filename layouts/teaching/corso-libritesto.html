@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+<div class="card">
+    <h5 class="card-header page-card-header">
+        {{ .Title }}
+    </h5>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-8">
+                {{ .Content }}
+
+                {{ if .Params.libro_scuola }}
+                <p>Il libro di testo adottato dall'Istituto &egrave;:</p>
+
+                {{ range .Params.libro_scuola }}
+
+                <div style="width: 100%; border: 1px solid #cccccc;" class="p-2 mb-2">
+                    <h5 class="text-primary">{{ .titolo }}</h5>
+                    <p class="h6 mb-0 pb-0">{{ .autori }} ({{ .editore }}, <i>volume {{ .volume }}</i>)</p>
+                </div>
+
+                {{ end }}
+                {{ end }}
+
+                {{ if .Params.libri_docente }}
+                <br>
+                <p>Altri libri usati nel corso (non richiesti per l'acquisto):</p>
+
+                {{ range .Params.libri_docente }}
+                <div style="width: 100%; border: 1px solid #cccccc;" class="p-2 mb-2">
+                    <h5 class="text-primary">{{ .titolo }}</h5>
+                    <p class="h6 mb-0 pb-0">{{ .autori }} ({{ .editore }}, <i>volume {{ .volume }}</i>)</p>
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+
+            <div class="col col-4">
+                {{ partial "corso-sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

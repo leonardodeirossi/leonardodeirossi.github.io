@@ -1,0 +1,68 @@
+{{ define "main" }}
+
+{{ partial "blog-header.html" . }}
+
+<div class="row">
+  <div class="col col-8">
+    <h2 class="morn-demibold mb-1">
+      {{ .Title }}
+    </h2>
+
+    <p class="text-muted">
+      Pubblicato il
+      {{ .Date.Format "02/01/2006" }} da
+      {{ with .Params.authors }}
+      {{ range $index, $author := . }}
+      {{ if $index }}, {{ end }}
+      <a href="/blog/authors/{{ $author | urlize }}/">{{ $author }}</a>
+      {{ end }}
+      {{ end }}
+    </p>
+
+    <hr>
+
+    {{ .Content }}
+
+    <br>
+
+    {{ with .Params.authors }}
+    {{ range . }}
+    {{ $authorPage := site.GetPage (printf "/blog/authors/%s" .) }}
+    {{ if $authorPage }}
+    <div class="card mb-3">
+      <div class="row g-0 align-items-center">
+        <div class="col-md-3">
+          <img src="/images/blog/authors/{{ $authorPage.Params.immagine }}" class="p-2" style="width: 100%; border-radius: 50%;"
+            alt="...">
+        </div>
+
+        <div class="col-md-9">
+          <div class="card-body">
+            <h3 class="card-title morn-demibold">
+              {{ $authorPage.Params.nome }}
+            </h3>
+
+            <p class="card-text">
+              {{ $authorPage.Params.descrizione | markdownify }}
+            </p>
+
+            <p class="card-text">
+              <a href="{{ $authorPage.Permalink }}">
+                Vai alla pagina dell'autore
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+  </div>
+
+  <div class="col col-4">
+    {{ partial "blog-sidebar.html" . }}
+  </div>
+</div>
+
+{{ end }}

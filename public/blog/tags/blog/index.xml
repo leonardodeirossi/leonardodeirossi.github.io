@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Blog on ~leode</title>
+		<link>http://localhost:38211/blog/tags/blog/</link>
+		<description>Recent content in Blog on ~leode</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 02 Aug 2026 14:38:00 +0200</lastBuildDate>
+		
+			<atom:link href="http://localhost:38211/blog/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Ciao, Mondo!</title>
+				<link>http://localhost:38211/blog/2026/08/ciao-mondo/</link>
+				<pubDate>Sun, 02 Aug 2026 14:38:00 +0200</pubDate>
+				<guid>http://localhost:38211/blog/2026/08/ciao-mondo/</guid>
+				<description>&lt;p&gt;sss&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,85 @@
+{{ define "main" }}
+
+<div class="card">
+    <h5 class="card-header page-card-header">
+        {{ .Title }}
+    </h5>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-8">
+                {{ .Content }}
+
+                {{ if .Params.argomenti }}
+                <div class="argomenti-section mb-4">
+                    <span class="fw-bold">Argomenti:</span>
+                    {{ .Params.argomenti | markdownify }}
+                </div>
+                {{ end }}
+
+                {{ if .Params.materiali }}
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Materiali</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{ range .Params.materiali }}
+                        <tr>
+                            <td align="center" style="width: 32px; min-width: 32px; max-width: 64px;">
+                                <i class="bi {{ .icon }}" style="color: #1e4e79;"></i>
+                            </td>
+
+                            <td>
+                                {{ .testo }}
+                            </td>
+
+                            {{ if .esterno }}
+                            <td>
+                                <center>
+                                    <a href="{{ .link }}" target="_blank">(link)</a>
+                                </center>
+                            </td>
+                            {{ else }}
+                            <td>
+                                <center>
+                                    <a href="/teaching/{{ $.Params.codice }}/assets/lucidi/{{ .link }}"
+                                        target="_blank">(link)</a>
+                                </center>
+                            </td>
+                            {{ end }}
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+                {{ end }}
+            </div>
+
+            <div class="col col-4">
+                <center>
+                    <a href="{{ .Params.licenza_link }}" target="_blank" title="{{ .Params.licenza }}">
+                        <img src="/images/{{ .Params.licenza_img }}" style="height: 75px;" alt="{{ .Params.licenza }}">
+                    </a>
+                </center>
+
+                <br>
+
+                <p>
+                    Ultimo aggiornamento:
+
+                    <br>
+
+                    <span class="fw-bold">
+                        {{ .Lastmod.Format "02/01/2006 alle 15:04" }}
+                    </span>
+                </p>
+
+                <hr>                
+
+                {{ partial "corso-sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

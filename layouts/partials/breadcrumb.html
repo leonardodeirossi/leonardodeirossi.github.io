@@ -1,0 +1,76 @@
+<!--
+<nav class="container" aria-label="breadcrumb" style=" margin-top: calc(1.5rem + 56px);">
+  <ol class="breadcrumb">
+    {{ range .Ancestors.Reverse }}
+    <li class="breadcrumb-item">
+      <a href="{{ .Permalink }}">
+        {{ if .IsHome }}Home{{ else }}{{ .Title }}{{ end }}
+      </a>
+    </li>
+    {{ end }}
+
+    <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+  </ol>
+</nav>
+-->
+
+<nav class="container" aria-label="breadcrumb" style=" margin-top: calc(1.5rem + 56px);">
+  <ol class="breadcrumb">
+    
+    <!-- 1. Ciclo per gli elementi genitori (Ancestors) -->
+    {{ range .Ancestors.Reverse }}
+      
+      {{ $title := .Title }}
+      
+      {{ if .IsHome }}
+        {{ $title = "Home" }}
+      {{ else if and (eq .Type "archives") (eq .Kind "taxonomy") }}
+        {{/* Sostituisce "Archives" con "Archivi" */}}
+        {{ $title = "Archivi" }}
+      {{ end }}
+
+      <li class="breadcrumb-item">
+        <a href="{{ .Permalink }}">{{ $title }}</a>
+      </li>
+
+      {{/* INIEZIONE: Poiché Hugo stacca le tassonomie dalle cartelle fisiche, 
+           forziamo l'inserimento del "Blog" subito dopo la Home */}}
+      {{ if and .IsHome (eq $.Type "archives") }}
+        {{/* Prova a recuperare automaticamente il titolo della pagina /blog/ */}}
+        {{ with $.Site.GetPage "/blog" }}
+          <li class="breadcrumb-item">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </li>
+        {{ else }}
+          <li class="breadcrumb-item">
+            <a href="/blog/">@leode&#39;s blog</a>
+          </li>
+        {{ end }}
+      {{ end }}
+
+    {{ end }}
+
+    <!-- 2. Pagina corrente (Active) -->
+    {{ $activeTitle := .Title }}
+    
+    {{ if eq .Type "archives" }}
+      {{ if eq .Kind "taxonomy" }}
+        {{ $activeTitle = "Archivi" }}
+      {{ else if eq .Kind "term" }}
+        
+        {{/* Logica di traduzione "2026-08" -> "Agosto 2026" */}}
+        {{ $parts := split .Title "-" }}
+        {{ if eq (len $parts) 2 }}
+          {{ $monthStr := strings.TrimPrefix "0" (index $parts 1) }}
+          {{ $monthInt := int $monthStr }}
+          {{ $mesi := slice "" "Gennaio" "Febbraio" "Marzo" "Aprile" "Maggio" "Giugno" "Luglio" "Agosto" "Settembre" "Ottobre" "Novembre" "Dicembre" }}
+          {{ $activeTitle = printf "%s %s" (index $mesi $monthInt) (index $parts 0) }}
+        {{ end }}
+        
+      {{ end }}
+    {{ end }}
+
+    <li class="breadcrumb-item active" aria-current="page">{{ $activeTitle }}</li>
+    
+  </ol>
+</nav>

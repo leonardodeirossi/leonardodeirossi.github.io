@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Materiale on ~leode</title>
+    <link>http://localhost:1313/teaching/as2526/triennio-quinte/informatica/materiale/</link>
+    <description>Recent content in Materiale on ~leode</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/teaching/as2526/triennio-quinte/informatica/materiale/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Approfondimenti</title>
+      <link>http://localhost:1313/teaching/as2526/triennio-quinte/informatica/materiale/approfondimenti/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/as2526/triennio-quinte/informatica/materiale/approfondimenti/</guid>
+      <description>&lt;div class=&#34;alert alert-warning&#34;&gt;&#xA;    &lt;b&gt;Attenzione:&lt;/b&gt;&#xA;    &lt;br&gt;&#xA;    Nessun dato disponibile.&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Esercizi</title>
+      <link>http://localhost:1313/teaching/as2526/triennio-quinte/informatica/materiale/esercizi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/as2526/triennio-quinte/informatica/materiale/esercizi/</guid>
+      <description>&lt;p&gt;Quando le soluzioni sono presenti, è ovviamente consigliato provare a risolvere l&amp;rsquo;esercizio in autonomia e guardare le soluzioni solo in un secondo momento.&lt;/p&gt;&#xA;&lt;p&gt;I file vengono aggiornati in continuazione, al fine di correggere piccoli errori e di inserire nuovi esercizi.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Libri di testo</title>
+      <link>http://localhost:1313/teaching/as2526/triennio-quinte/informatica/materiale/libri-testo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/as2526/triennio-quinte/informatica/materiale/libri-testo/</guid>
+      <description>&lt;div class=&#34;alert alert-warning&#34;&gt;&#xA;    &lt;b&gt;Attenzione:&lt;/b&gt;&#xA;    &lt;br&gt;&#xA;    Nessun dato disponibile.&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Slides e handouts</title>
+      <link>http://localhost:1313/teaching/as2526/triennio-quinte/informatica/materiale/lucidi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/as2526/triennio-quinte/informatica/materiale/lucidi/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

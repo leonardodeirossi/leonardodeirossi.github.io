@@ -1,0 +1,78 @@
+{{ define "main" }}
+
+<div class="card">
+    <h5 class="card-header page-card-header">
+        {{ .Title }}
+    </h5>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-8">
+                {{ .Content }}
+
+                <p>
+                    Ai vari argomenti corrispondono vari file.
+                </p>
+
+                <ul>
+                    <li>Le <span class="fw-bold">slide</span> corrispondono alla versione presentata a lezione;
+                    </li>
+                    <li>Gli <span class="fw-bold">handout</span> sono slide da cui sono stati rimossi le pagine
+                        "di
+                        troppo", come indici, vignette e animazioni troppo lunghe (sono pi&ugrave; adatti alla stampa).
+                    </li>
+                </ul>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <th style="width: 70%;">Argomento</th>
+                        <th style="width: 15%;">
+                            <center>Slide</center>
+                        </th>
+                        <th style="width: 15%;">
+                            <center>Handout</center>
+                        </th>
+                    </thead>
+
+                    <tbody>
+                        {{ if .Params.argomenti }}
+                        {{ range .Params.argomenti }}
+                        <tr>
+                            <td>{{ .titolo }}</td>
+                            <td>
+                                {{ if .slide }}
+                                <center>
+                                    <a href="/teaching/{{ $.Params.codice }}/assets/lucidi/{{ .slide }}"
+                                        target="_blank">(link)</a>
+                                </center>
+                                {{ end }}
+                            </td>
+
+                            <td>
+                                {{ if .handout }}
+                                <center>
+                                    <a href="/teaching/{{ $.Params.codice }}/assets/handouts/{{ .handout }}"
+                                        target="_blank">(link)</a>
+                                </center>
+                                {{ end }}
+                            </td>
+                        </tr>
+                        {{ end }}
+                        {{ else }}
+                        <tr>
+                            <td colspan="3">
+                                <center>Nessun dato trovato.</center>
+                            </td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col col-4">
+                {{ partial "corso-sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

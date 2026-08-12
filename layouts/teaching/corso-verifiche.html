@@ -1,0 +1,80 @@
+{{ define "main" }}
+
+<div class="card">
+    <h5 class="card-header page-card-header">
+        {{ .Title }}
+    </h5>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-8">
+                {{ .Content }}
+
+                {{ if .Params.verifiche }}
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Titolo</th>
+
+                            <th style="width: 20%;">
+                                <center>Data</center>
+                            </th>
+
+                            <th style="width: 10%;">
+                                <center>Fila</center>
+                            </th>
+
+                            <th style="width: 10%;">
+                                <center>Link</center>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {{ range .Params.verifiche }}
+                        <tr>
+                            <td>{{ .titolo | markdownify }}</td>
+
+                            <td>
+                                <center>{{ .data }}</center>
+                            </td>
+
+                            <td>
+                                <center>
+                                    {{ with .fila }}
+                                    {{ $bgClass := "text-bg-secondary" }}
+
+                                    {{ if eq . "A" }}
+                                    {{ $bgClass = "text-bg-primary" }}
+                                    {{ else if eq . "B" }}
+                                    {{ $bgClass = "text-bg-success" }}
+                                    {{ else if eq . "X" }}
+                                    {{ $bgClass = "text-bg-info text-white" }}
+                                    {{ else if eq . "U" }}
+                                    {{ $bgClass = "text-bg-info text-white" }}
+                                    {{ end }}
+
+                                    <span class="badge {{ $bgClass }} fs-6">{{ . }}</span>
+                                    {{ end }}
+                                </center>
+                            </td>
+
+                            <td>
+                                <center>
+                                    <a href="/teaching/{{ $.Params.codice }}/assets/verifiche/{{ .link }}" target="_blank">(link)</a>
+                                </center>
+                            </td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+                {{ end }}
+            </div>
+
+            <div class="col col-4">
+                {{ partial "corso-sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

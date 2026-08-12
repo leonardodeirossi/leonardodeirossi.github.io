@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Urgente on ~leode</title>
+		<link>http://localhost:1313/blog/tags/urgente/</link>
+		<description>Recent content in Urgente on ~leode</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 01 Aug 2026 15:41:00 +0200</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/blog/tags/urgente/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Spostamento lezione di mercoledì</title>
+				<link>http://localhost:1313/teaching/as2526/biennio-prime/tecnologie-informatiche/avvisi/avviso-20260801154200/</link>
+				<pubDate>Sat, 01 Aug 2026 15:41:00 +0200</pubDate>
+				<guid>http://localhost:1313/teaching/as2526/biennio-prime/tecnologie-informatiche/avvisi/avviso-20260801154200/</guid>
+				<description>&lt;p&gt;Si avvisano gli studenti che la lezione di mercoledì è stata spostata nell&amp;rsquo;Aula Magna.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

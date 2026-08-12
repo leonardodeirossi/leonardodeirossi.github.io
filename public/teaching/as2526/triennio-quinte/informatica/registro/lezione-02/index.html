@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lezione 2 - Array e oggetti | ~leode</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    
+
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.8/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        @font-face {
+            font-family: morn-demibold;
+            src: url("/assets/fonts/morn-demibold.ttf");
+        }
+
+        :root {
+            --bs-primary-rgb: 30, 78, 121;
+        }
+
+        .site-title {
+            display: flex;
+            align-items: center;
+            font-size: 26px;
+            font-family: morn-demibold;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -1px;
+            margin-bottom: 0;
+            float: left;
+        }
+
+        .morn-demibold {
+            font-family: morn-demibold;
+        }
+
+        .rounded-image {
+            border-radius: 50%;
+        }
+
+        .site-footer {
+            background-color: #EEEEEE;
+            border-top: 1px solid #e8e8e8;
+            padding: 30px 0 0 0;
+        }
+
+        .page-card-header {
+            color: white;
+            background-color: rgb(var(--bs-primary-rgb));
+        }
+
+        table>thead>tr>th {
+            background-color: #F2F2F2 !important;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .hover-underline:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+
+    <script src="/assets/js/asciinema-player.js"></script>
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+    <div class="fixed-top" style="position: fixed;">
+    <nav class="navbar navbar-expand-lg" style="background-color: #1e4e79;">
+        <div class="container">
+            <a class="site-title" href="/">
+                <img src="/images/favicon.png" style="width: 40px; height: 40px;" alt="Logo">
+                
+                <span>&nbsp;Leonardo Essam</span>
+            </a>
+
+            <div class="d-flex align-items-center">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/teaching/as2526/triennio-quinte/informatica/">Home del corso</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/teaching/as2526/triennio-quinte/informatica/programma/">Programma</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/teaching/as2526/triennio-quinte/informatica/registro/">Registro</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/teaching/as2526/triennio-quinte/informatica/materiale/">Materiale</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/teaching/as2526/triennio-quinte/informatica/temi-verifiche/">Temi (verifiche)</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+    
+
+<nav class="container" aria-label="breadcrumb" style=" margin-top: calc(1.5rem + 56px);">
+  <ol class="breadcrumb">
+    
+    
+    
+      
+      
+      
+      
+        
+      
+
+      <li class="breadcrumb-item">
+        <a href="http://localhost:1313/">Home</a>
+      </li>
+
+      
+      
+
+    
+      
+      
+      
+      
+
+      <li class="breadcrumb-item">
+        <a href="http://localhost:1313/teaching/">Corsi e Insegnamenti</a>
+      </li>
+
+      
+      
+
+    
+      
+      
+      
+      
+
+      <li class="breadcrumb-item">
+        <a href="http://localhost:1313/teaching/as2526/">2025/2026</a>
+      </li>
+
+      
+      
+
+    
+      
+      
+      
+      
+
+      <li class="breadcrumb-item">
+        <a href="http://localhost:1313/teaching/as2526/triennio-quinte/">Classi quinte</a>
+      </li>
+
+      
+      
+
+    
+      
+      
+      
+      
+
+      <li class="breadcrumb-item">
+        <a href="http://localhost:1313/teaching/as2526/triennio-quinte/informatica/">Informatica</a>
+      </li>
+
+      
+      
+
+    
+      
+      
+      
+      
+
+      <li class="breadcrumb-item">
+        <a href="http://localhost:1313/teaching/as2526/triennio-quinte/informatica/registro/">Registro</a>
+      </li>
+
+      
+      
+
+    
+
+    
+    
+    
+    
+
+    <li class="breadcrumb-item active" aria-current="page">Lezione 2 - Array e oggetti</li>
+    
+  </ol>
+</nav>
+
+    <div class="container mt-3">
+        
+
+<div class="card">
+    <h5 class="card-header page-card-header">
+        Lezione 2 - Array e oggetti
+    </h5>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-8">
+                
+
+                
+                <div class="argomenti-section mb-4">
+                    <span class="fw-bold">Argomenti:</span>
+                    <ul>
+<li>Gli array in JavaScript:
+<ul>
+<li>Dichiarazione e assegnazione;</li>
+<li>Accesso posizionale;</li>
+<li>Proprietà <code>.length</code>;</li>
+<li>Metodi di iterazione:
+<ul>
+<li>Ciclo <code>for</code> &ldquo;classico&rdquo;;</li>
+<li>Ciclo <code>for ... of ...</code>;</li>
+<li>Metodo <code>.forEach([...])</code>.</li>
+</ul>
+</li>
+<li>Metodi di manipolazione:
+<ul>
+<li>Metodo <code>.map([...])</code>;</li>
+<li>Metodo <code>.filter([...])</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Gli oggetti in JavaScript:
+<ul>
+<li>Dichiarazione e assegnazione;</li>
+<li>Accesso con <em>dot-notation</em> e <em>bracket-notation</em>;</li>
+<li>Keyword <code>delete [...]</code>;</li>
+<li>Metodi di enumerazione delle proprietà:
+<ul>
+<li>Loop <code>for ... in ...</code>;</li>
+<li>Funzioni di <code>Object</code>:
+<ul>
+<li>Funzione <code>Object.keys()</code>;</li>
+<li>Funzione <code>Object.values()</code>;</li>
+<li>Funzione <code>Object.entries()</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                </div>
+                
+
+                
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Materiali</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td align="center" style="width: 32px; min-width: 32px; max-width: 64px;">
+                                <i class="bi bi-file-earmark-slides" style="color: #1e4e79;"></i>
+                            </td>
+
+                            <td>
+                                Slides della lezione
+                            </td>
+
+                            
+                            <td>
+                                <center>
+                                    <a href="/teaching/as2526/triennio-quinte/informatica/assets/lucidi/Lez02_ArrayOggetti1.pdf"
+                                        target="_blank">(link)</a>
+                                </center>
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td align="center" style="width: 32px; min-width: 32px; max-width: 64px;">
+                                <i class="bi bi-file-earmark-slides" style="color: #1e4e79;"></i>
+                            </td>
+
+                            <td>
+                                Slides della lezione (ripasso 02/10)
+                            </td>
+
+                            
+                            <td>
+                                <center>
+                                    <a href="/teaching/as2526/triennio-quinte/informatica/assets/lucidi/Lez03_ArrayOggetti2.pdf"
+                                        target="_blank">(link)</a>
+                                </center>
+                            </td>
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                
+            </div>
+
+            <div class="col col-4">
+                <center>
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0">
+                        <img src="/images/cc-by-ns-sa.png" style="height: 75px;" alt="CC BY-NC-SA 4.0">
+                    </a>
+                </center>
+
+                <br>
+
+                <p>
+                    Ultimo aggiornamento:
+
+                    <br>
+
+                    <span class="fw-bold">
+                        04/08/2026 alle 18:43
+                    </span>
+                </p>
+
+                <hr>                
+
+                
+
+<aside>
+    <p class="fw-bold">Consigli per migliorare:</p>
+
+    <p>
+        Se avete tempo e volete condividere le vostre impressioni sul corso e suggerimenti per migliorarlo, compilate
+        questo form anonimo <a href="https://ldeirossi.altervista.org/QuestionarioDidattica/survey.php?sid=1" target="_blank">(link)</a>.
+    </p>
+</aside>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+    
+    <footer class="site-footer mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col col-6">
+                <h2 style="color: #424242;">
+                    Leonardo Essam Dei Rossi
+                </h2>
+
+                <p class="text">
+                    I am a Computer Science teacher at "Michelangelo Buonarroti" High School in Trento (Italy) since
+                    fall 2025.
+                </p>
+
+                <p class="text">
+                    And also, I am a BSc student in Computer Science at the Department of information engineering
+                    and computer science, University of Trento since fall 2024.
+                </p>
+            </div>
+
+            <div class="col col-2">&nbsp;</div>
+
+            <div class="col col-4">
+                <span class="fw-bold">
+                    Contacts:
+                </span>
+
+                <ul class="contact-list">
+                    <li>
+                        <a href="mailto:leonardoessam.deirossi@gmail.com">
+                            leonardoessam.deirossi@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:leonardoessam.deirossi@scuole.provincia.tn.it">
+                            leonardoessam.deirossi@scuole.provincia.tn.it
+                        </a>
+                    </li>
+                </ul>
+
+                <span class="fw-bold">
+                    Social accounts:
+                </span>
+
+                <ul class="contact-list">
+                    <li>
+                        <a href="https://www.instagram.com/leonardodeirossi/" target="_blank">
+                            Instagram (@leonardodeirossi)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=61569856342263" target="_blank">
+                            Facebook (personal)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/leonardoessam-deirossi/" target="_blank">
+                            LinkedIn (personal)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/school/universitaditrento/" target="_blank">
+                            LinkedIn (University of Trento)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <center>
+                <p class="text">
+                    Copyright &copy; 2025 - Dei Rossi, Leonardo Essam. All rights reserved
+                    <a href="/license/">(link)</a>
+                </p>
+            </center>
+        </div>
+</footer>
+</body>
+
+</html>

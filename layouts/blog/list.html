@@ -1,0 +1,35 @@
+{{ define "main" }}
+<main class="blog-list">
+  <header>
+    <h1>{{ .Title }}</h1>
+    <!-- Renders content from content/blog/_index.md if it exists -->
+    <div class="section-content">
+      {{ .Content }}
+    </div>
+  </header>
+
+  <ul class="posts">
+    <!-- Loop through all markdown files in the blog section -->
+    {{ range .Pages }}
+      <li>
+        <article>
+          <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+          
+          <div class="meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">
+              {{ .Date.Format "January 2, 2006" }}
+            </time>
+          </div>
+
+          <!-- Hugo automatically generates a summary from the start of your post -->
+          <p>{{ .Summary }}</p>
+          
+          {{ if .Truncated }}
+            <a href="{{ .Permalink }}" class="read-more">Read More &rarr;</a>
+          {{ end }}
+        </article>
+      </li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}

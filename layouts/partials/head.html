@@ -1,0 +1,76 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ if .IsHome }}Home{{ else }}{{ .Title }}{{ end }} | ~leode</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!--
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/bib.css">
+    <link rel="stylesheet" href="/assets/css/asciinema-player.css">
+    <link rel="stylesheet" href="/assets/css/leode.css">
+    -->
+
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.8/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        @font-face {
+            font-family: morn-demibold;
+            src: url("/assets/fonts/morn-demibold.ttf");
+        }
+
+        :root {
+            --bs-primary-rgb: 30, 78, 121;
+        }
+
+        .site-title {
+            display: flex;
+            align-items: center;
+            font-size: 26px;
+            font-family: morn-demibold;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -1px;
+            margin-bottom: 0;
+            float: left;
+        }
+
+        .morn-demibold {
+            font-family: morn-demibold;
+        }
+
+        .rounded-image {
+            border-radius: 50%;
+        }
+
+        .site-footer {
+            background-color: #EEEEEE;
+            border-top: 1px solid #e8e8e8;
+            padding: 30px 0 0 0;
+        }
+
+        .page-card-header {
+            color: white;
+            background-color: rgb(var(--bs-primary-rgb));
+        }
+
+        table>thead>tr>th {
+            background-color: #F2F2F2 !important;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .hover-underline:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+
+    <script src="/assets/js/asciinema-player.js"></script>
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>

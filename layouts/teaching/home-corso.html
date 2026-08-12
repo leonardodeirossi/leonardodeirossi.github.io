@@ -1,0 +1,147 @@
+{{ define "main" }}
+
+<div class="card">
+    <h5 class="card-header page-card-header">
+        {{ .Title }}
+    </h5>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-8">
+                {{ .Content }}
+
+                {{ $sezioneAvvisi := .GetPage "avvisi" }}
+
+                {{ if and $sezioneAvvisi (gt (len $sezioneAvvisi.RegularPages) 0) }}
+
+                <div class="elenco-avvisi">
+                    <h4>Bacheca avvisi</h4>
+
+                    {{ $avvisiOrdinati := sort $sezioneAvvisi.RegularPages "File.LogicalName" "desc" }}
+
+                    {{ range first 3 $avvisiOrdinati }}
+                    <div style="width: 100%; border: 1px solid #cccccc;" class="p-2 mb-2">
+                        <i class="h5 bi bi-megaphone text-warning"></i>
+                        <a href="{{ .RelPermalink }}" class="h5 text-primary text-decoration-none hover-underline">{{ .Title }}</a>
+                        <p class="text-muted h6 mb-0 pb-0">
+                            Pubblicato il: <b>{{ .Date.Format "02/01/2006 alle 15:04" }}</b>
+                            {{ with .Params.tags }}
+                            {{ range . }}
+                            {{ $tagLow := lower . }}
+                            {{ $bgClass := "text-bg-secondary" }}
+
+                            {{ if eq $tagLow "urgente" }}
+                            {{ $bgClass = "text-bg-danger" }}
+                            {{ else if eq $tagLow "informazione" }}
+                            {{ $bgClass = "text-bg-secondary" }}
+                            {{ else if eq $tagLow "materiale" }}
+                            {{ $bgClass = "text-bg-info" }}
+                            {{ else if eq $tagLow "importante" }}
+                            {{ $bgClass = "text-bg-primary" }}
+                            {{ else if eq $tagLow "calendario" }}
+                            {{ $bgClass = "text-bg-primary" }}
+                            {{ else if eq $tagLow "verifiche" }}
+                            {{ $bgClass = "text-bg-danger" }}
+                            {{ else if eq $tagLow "risolto" }}
+                            {{ $bgClass = "text-bg-success" }}
+                            {{ end }}
+
+                            <span class="badge {{ $bgClass }} me-1">{{ . }}</span>
+                            {{ end }}
+                            {{ end }}
+                        </p>
+                    </div>
+                    {{ end }}
+
+
+                    <a href="{{ $sezioneAvvisi.RelPermalink }}">
+                        Mostra tutti gli avvisi</i>
+                    </a>
+                </div>
+                {{ end }}
+
+                <!--
+                {{ range .Params.quadrimestri }}
+                {{ range .lezioni }}
+                {{ if not .cancellata }}
+                <section class="mb-5">
+                    <h4 id="{{ .id }}">Lezione {{ .numero }} - {{ .descrizione }}</h4>
+
+                    <span class="font-weight-bold">Argomenti:</span>
+                    {{ .argomenti | markdownify }}
+
+                    {{ if .materiali }}
+                    <table class="table table-bordered">
+                        <thead>
+                            <th colspan="3">Materiali</th>
+                        </thead>
+                        <tbody>
+                            {{ range .materiali }}
+                            <tr>
+                                <td align="center" style="width: 32px; min-width: 32px; max-width: 64px;">
+                                    <i class="bi {{ .icon }}" style="color: #1e4e79;"></i>
+                                </td>
+                                <td>{{ .testo }}</td>
+
+                                {{ if .esterno }}
+                                <td>
+                                    <center>
+                                        <a href="{{ .link }}" target="_blank">(link)</a>
+                                    </center>
+                                </td>
+                                {{ else }}
+                                <td>
+                                    <center>
+                                        <a href="/teaching/assets/{{ $.Params.codice }}/{{ .link }}"
+                                            target="_blank">(link)</a>
+                                    </center>
+                                </td>
+                                {{ end }}
+                            </tr>
+                            {{ end }}
+                        </tbody>
+                    </table>
+                    {{ end }}
+                </section>
+                {{ end }}
+                {{ end }}
+                {{ end }}
+                 -->
+            </div>
+
+            <div class="col col-4">
+                {{ if .Params.calendario }}
+                <table class="table table-bordered" class="mb-3">
+                    <thead>
+                        <tr>
+                            <th>Calendario delle lezioni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{ range .Params.calendario }}
+                        <tr>
+                            <td>
+                                {{ .giorno }}<br>
+                                <span style="font-size: 14px">{{ .orario }} - {{ .aula }}</span>
+                            </td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+                {{ end }}
+
+                <p>
+                    Ultimo aggiornamento:
+                    <br>
+                    <span class="fw-bold">{{ .Lastmod.Format "02/01/2006 alle 15:04" }}</span>
+                </p>
+
+                <hr>
+
+                {{ partial "corso-sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ end }}
